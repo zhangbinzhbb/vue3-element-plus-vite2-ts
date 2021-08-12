@@ -4,51 +4,39 @@
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
-    "jsx": "preserve",
+    "jsx": "preserve", // 指定jsx代码用于的开发环境:'preserve','react-native',or 'react
     "sourceMap": true,
     "resolveJsonModule": true,
-    // "noImplicitAny": false, /* 不允许隐式的any类型 */
-    "esModuleInterop": true, /* 通过为所有导入创建命名空间对象，实现CommonJS和ES模块之间的互操作性 */
+    "noImplicitAny": false /* 不允许隐式的any类型 */,
+    "esModuleInterop": true /* 通过为所有导入创建命名空间对象，实现CommonJS和ES模块之间的互操作性 */,
     "skipLibCheck": true /* 跳过声明文件的类型检查. */,
-    "forceConsistentCasingInFileNames": true, /* 不允许对同一文件的大小写不一致的引用 */
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "types": [
-      "vite/client"
-    ],
+    "forceConsistentCasingInFileNames": true /* 不允许对同一文件的大小写不一致的引用 */,
+    "lib": ["esnext", "dom"],
+    "types": ["vite/client"], // 用于指定需要包含的模块，只有在这里列出的模块的声明文件才会被加载
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "comps/*": [
-        "src/components/*"
-      ],
-      "api/*": [
-        "src/api/*"
-      ],
-      "views/*": [
-        "src/views/*"
-      ],
-      "store/*": [
-        "src/store/*"
-      ],
-      "hooks/*": [
-        "src/hooks/*"
-      ],
-    },
+      // 用于设置模块名到基于baseUrl的路径映射
+      "@/*": ["src/*"],
+      "types/*": ["src/*"],
+      "comps/*": ["src/components/*"],
+      "api/*": ["src/api/*"],
+      "views/*": ["src/views/*"],
+      "store/*": ["src/store/*"],
+      "hooks/*": ["src/hooks/*"]
+    }
   },
-  "typeRoots": ["./node_modules/@types/", "./types"],// 声明文件目录，默认时node_modules/@types
+  // 声明文件目录，默认时node_modules/@types
+  "typeRoots": ["./node_modules/@types/", "./types"],
   //指定一个匹配列表（属于自动指定该路径下的所有ts相关文件）
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue", 
+    "src/**/*.vue",
     "mock/**/*.ts",
     "types/**/*.d.ts",
-    "types/**/*.ts",
-   ]
+    "types/**/*.ts"
+  ],
+  // 要排除的，不编译的文件，它也可以指定一个列表，规则和include一样，可以是文件可以是文件夹，可以是相对路径或绝对路径，可以使用通配符
+  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"]
 }

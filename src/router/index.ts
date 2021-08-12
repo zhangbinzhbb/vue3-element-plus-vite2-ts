@@ -1,7 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import type { App } from 'vue';
 
-const routerHistory = createWebHistory();
+// const routerHistory = createWebHistory();
+const routerHashHistory = createWebHashHistory();
+
 // createWebHashHistory hash 路由
 // createWebHistory history 路由
 // createMemoryHistory 带缓存 history 路由
@@ -9,7 +11,7 @@ const routerHistory = createWebHistory();
 const Layout = () => import('@/layout/index.vue');
 
 const router = createRouter({
-  history: routerHistory,
+  history: routerHashHistory,
   routes: [
     {
       path: '/login',
@@ -59,4 +61,5 @@ export function resetRoute(): void {
 export function setupRouter(app: App<Element>): void {
   app.use(router);
 }
+
 export default router;

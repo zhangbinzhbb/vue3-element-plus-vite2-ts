@@ -87,12 +87,6 @@ import {
   ElNotification,
 } from 'element-plus';
 
-import locale from 'element-plus/lib/locale';
-import lang from 'element-plus/lib/locale/lang/zh-cn';
-
-// 设置语言
-locale.use(lang);
-
 const components = [
   ElAlert,
   ElAside,
@@ -176,18 +170,18 @@ const components = [
 
 const plugins = [ElInfiniteScroll, ElLoading, ElMessage, ElMessageBox, ElNotification];
 
-import ElementPlus from 'element-plus';
+// import ElementPlus from 'element-plus';
 
 export function setupElementPlus(app: App<Element>): void {
-  // components.forEach((component: any) => {
-  //   app.component(component.name, component)
-  // })
+  components.forEach((component: any) => {
+    app.component(component.name, component);
+  });
 
-  // plugins.forEach((plugin: any) => {
-  //   app.use(plugin)
-  // })
+  plugins.forEach((plugin: any) => {
+    app.use(plugin);
+  });
 
-  app.use(ElementPlus);
+  // app.use(ElementPlus);
   // 全局配置
   app.config.globalProperties.$ELEMENT = { size: 'small', zIndex: 3000 };
 }

@@ -89,7 +89,7 @@
     align-items: center;
     width: 100%;
     background-color: #fff;
-
+    height: 100%;
     /* background-image: linear-gradient(25deg, #077f7c, #3aa693, #5ecfaa, #7ffac2); */
   }
 

@@ -6,7 +6,7 @@ import { setupGlobalCom } from './components/index';
 
 import './styles/index.scss';
 
-import mitt from 'mitt';
+// import mitt from 'mitt';
 
 import App from './App.vue';
 
@@ -20,9 +20,7 @@ setupElementPlus(app); // 引入element组件
 
 setupGlobalCom(app); // 注册全局公用组件
 
-app.config.globalProperties.mittBus = mitt();
-
-// console.log('elementPlus---',elementPlus);
+// app.config.globalProperties.mittBus = mitt();
 
 router.isReady().then(() => {
   app.mount('#app');
