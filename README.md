@@ -16,7 +16,8 @@ yarn cache list
 ### yarn 清除缓存
 yarn cache clean
 
-
+### nvm 管理node
+nvm install latest
 
 ## 简介
 
